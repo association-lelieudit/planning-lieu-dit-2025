@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le lieu-dit - Planning Rentrée Août 2025</title>
+  <style>
+    @media print {
+      body { 
+        margin: 3px; 
+        font-size: 8px; 
+        line-height: 1.1;
+      }
+      
+      .header {
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #f9e450;
+      }
+      
+      .header h1 {
+        font-size: 16px;
+        padding: 5px;
+        margin: 0;
+      }
+      
+      .header h2 {
+        font-size: 12px !important;
+        margin: 3px 0 !important;
+      }
+      
+      table { 
+        page-break-inside: avoid;
+        font-size: 7px;
+        margin: 5px 0;
+        width: 100%;
+      }
+      
+      th {
+        padding: 4px 2px;
+        font-size: 9px;
+        border: 1px solid #000;
+      }
+      
+      td {
+        padding: 3px;
+        height: 45px;
+        vertical-align: top;
+        border: 1px solid #333;
+        font-size: 7px;
+      }
+      
+      td:first-child {
+        font-size: 8px;
+        width: 8%;
+        padding: 2px;
+      }
+      
+      .cours {
+        padding: 2px;
+        margin: 1px 0;
+        font-size: 6.5px;
+        line-height: 1.0;
+        border-radius: 2px;
+      }
+      
+      .prof {
+        font-size: 6.5px;
+        font-weight: bold;
+      }
+      
+      .rdv-section {
+        margin-top: 8px;
+        padding: 5px;
+        font-size: 7px;
+      }
+      
+      .rdv-section h3 {
+        font-size: 9px;
+        margin: 0 0 3px 0;
+      }
+      
+      .footer {
+        margin-top: 8px;
+        padding-top: 5px;
+        font-size: 6px;
+        line-height: 1.1;
+      }
+      
+      .footer p {
+        margin: 2px 0;
+      }
+      
+      small {
+        font-size: 5.5px !important;
+        line-height: 0.9 !important;
+      }
+      
+      /* Force sur une page */
+      @page {
+        size: A4 landscape;
+        margin: 10mm;
+      }
+      
+      /* Compacter l'art-thérapie mais garder les dates lisibles */
+      .art-therapie small {
+        display: block;
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+        margin-top: 2px;
+      }
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.4;
+      font-size: 12px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #f9e450;
+      padding-bottom: 15px;
+    }
+    
+    .header h1 {
+      background-color: #f9e450;
+      padding: 15px;
+      margin: 0;
+      font-size: 24px;
+      color: #000;
+    }
+    
+    .header p {
+      margin: 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 11px;
+    }
+    
+    th {
+      background-color: #f9e450 !important;
+      padding: 12px 8px;
+      text-align: center;
+      border: 2px solid #000;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    
+    td {
+      padding: 10px;
+      border: 1px solid #333;
+      vertical-align: top;
+      height: 80px;
+    }
+    
+    td:first-child {
+      background-color: #f1f1f1 !important;
+      font-weight: bold;
+      text-align: center;
+      width: 12%;
+      font-size: 11px;
+    }
+    
+    .cours {
+      background-color: #e3f2fd;
+      padding: 6px;
+      margin: 3px 0;
+      border-radius: 4px;
+      border-left: 4px solid #2196f3;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+    
+    .francais-debutant {
+      background-color: #e1f5fe !important;
+      border-left-color: #03a9f4;
+    }
+    
+    .francais-intermediaire {
+      background-color: #e8f5e8 !important;
+      border-left-color: #4caf50;
+    }
+    
+    .francais-avance {
+      background-color: #fff3e0 !important;
+      border-left-color: #ff9800;
+    }
+    
+    .informatique {
+      background-color: #f3e5f5 !important;
+      border-left-color: #9c27b0;
+    }
+    
+    .art-therapie {
+      background-color: #fce4ec !important;
+      border-left-color: #e91e63;
+    }
+    
+    .garde {
+      background-color: #e0f2f1 !important;
+      border-left-color: #00695c;
+      font-style: italic;
+    }
+    
+    .a-pourvoir {
+      background-color: #ffcdd2 !important;
+      border-left-color: #f44336;
+      font-style: italic;
+    }
+    
+    .a-confirmer {
+      background-color: #fff3e0 !important;
+      border-left-color: #ff9800;
+      font-style: italic;
+    }
+    
+    .prof {
+      font-weight: bold;
+      font-size: 10px;
+    }
+    
+    .rdv-section {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      font-size: 10px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Le lieu-dit</h1>
+    <h2 style="margin: 10px 0; color: #2e7d32;">Planning des Activités - Rentrée Août 2025</h2>
+  </div>
+
+  <table>
+    <tr>
+      <th>Horaires</th>
+      <th>LUNDI</th>
+      <th>MARDI</th>
+      <th>MERCREDI</th>
+      <th>JEUDI</th>
+      <th>VENDREDI</th>
+      <th>SAMEDI</th>
+    </tr>
+    
+    <tr>
+      <td><strong>9h00 - 10h30</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <div class="cours informatique">
+          <strong>Informatique</strong><br>
+          <span class="prof">Rozenn</span><br>
+          <small>Dès le 13 septembre</small>
+        </div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td><strong>9h30 - 11h00</strong></td>
+      <td>
+        <div class="cours francais-debutant">
+          <strong>Français débutant</strong><br>
+          <span class="prof">Marie-Noëlle</span>
+        </div>
+        <div class="cours francais-intermediaire">
+          <strong>Français intermédiaire</strong><br>
+          <span class="prof">Elena</span>
+        </div>
+        <div class="cours garde">
+          <strong>Accueil enfants</strong><br>
+          <span class="prof">Corinne + Assistante maternelle</span><br>
+          <small>Dès la rentrée</small>
+        </div>
+      </td>
+      <td>
+        <div class="cours francais-intermediaire">
+          <strong>Français intermédiaire</strong><br>
+          <span class="prof">Barbara</span>
+        </div>
+        <div class="cours francais-avance">
+          <strong>Français avancé</strong><br>
+          <span class="prof">Marie-Claire R.</span>
+        </div>
+        <div class="cours garde">
+          <strong>Accueil enfants</strong><br>
+          <span class="prof">Assistante maternelle</span><br>
+          <small>Dès le 15 septembre</small>
+        </div>
+      </td>
+      <td>
+        <div class="cours informatique">
+          <strong>Informatique</strong><br>
+          <span class="prof">Nicolas</span><br>
+          <small>Dès le 24 septembre</small>
+        </div>
+      </td>
+      <td>
+        <div class="cours francais-avance">
+          <strong>Français avancé</strong><br>
+          <span class="prof">Monique ou Claire-Annette</span>
+        </div>
+        <div class="cours francais-debutant">
+          <strong>Français débutant</strong><br>
+          <span class="prof">Caroline</span>
+        </div>
+        <div class="cours garde">
+          <strong>Accueil enfants</strong><br>
+          <span class="prof">Assistante maternelle</span><br>
+          <small>Dès le 15 septembre</small>
+        </div>
+      </td>
+      <td>
+        <div class="cours art-therapie">
+          <strong>🎨 Atelier créatif</strong><br>
+          <span class="prof">9h30-11h</span><br>
+          <small style="font-size: 9px; line-height: 1.2;">
+            <strong>Dates 2025 :</strong><br>
+            12 septembre • 3 octobre • 10 octobre<br>
+            7 novembre • 21 novembre • 28 novembre<br>
+            5 décembre • 12 décembre • 19 décembre
+          </small>
+        </div>
+      </td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td><strong>11h00 - 12h30</strong></td>
+      <td>
+        <div class="cours francais-debutant">
+          <strong>Français débutant</strong><br>
+          <span class="prof">Elena</span><br>
+          <small>11h10-12h30</small>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <div class="cours" style="background-color: #fff9c4 !important; border-left-color: #f57f17;">
+          <strong>🔍 Recherche d'emploi</strong><br>
+          <span class="prof">Guillaume</span><br>
+          <small>11h-12h30, dès le 26 septembre</small>
+        </div>
+      </td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td><strong>14h00 - 16h00</strong></td>
+      <td>
+        <div class="cours francais-avance">
+          <strong>Français avancé</strong><br>
+          <span class="prof">Claire</span>
+        </div>
+      </td>
+      <td></td>
+      <td>
+        <div class="cours francais-debutant">
+          <strong>Français débutant</strong><br>
+          <span class="prof">Claire-Annette / Marie-Ange</span>
+        </div>
+      </td>
+      <td>
+        <div class="cours francais-debutant">
+          <strong>Français débutant</strong><br>
+          <span class="prof">Suzie / Brigitte</span>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td><strong>14h00 - 15h30</strong></td>
+      <td></td>
+      <td></td>
+      <td>
+        <div class="cours francais-intermediaire">
+          <strong>Français intermédiaire</strong><br>
+          <span class="prof">Elisabeth</span>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td><strong>16h00 - 17h30</strong></td>
+      <td></td>
+      <td></td>
+      <td>
+        <div class="cours francais-intermediaire">
+          <strong>Français intermédiaire</strong><br>
+          <span class="prof">Elisabeth</span>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  
+  <div class="rdv-section">
+    <h3 style="margin-top: 0; color: #333;">📅 Sur rendez-vous</h3>
+    <div class="cours" style="border-left-color: #666;">
+      <strong>Soutien administratif</strong><br>
+      Aide dans diverses démarches administratives, courriers, appels, rendez-vous, etc.
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p><strong>Association Le lieu-dit</strong><br>
+    Rue des Marchandises 1, 1260 Nyon<br>
+    association.lelieudit@gmail.com • 079 172 34 15</p>
+    <p>Planning valable dès août 2025</p>
+  </div>
+
+</body>
+</html>
