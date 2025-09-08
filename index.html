@@ -102,7 +102,6 @@
         margin: 10mm;
       }
       
-      /* Compacter l'art-thérapie mais garder les dates lisibles */
       .art-therapie small {
         display: block;
         font-size: 7px !important;
@@ -180,6 +179,30 @@
       line-height: 1.3;
     }
     
+    /* Style pour cours COMPLET */
+    .cours-complet {
+      background-color: #ffebee !important;
+      border: 2px solid #d32f2f !important;
+      border-left: 4px solid #d32f2f !important;
+      position: relative;
+    }
+    
+    .cours-complet .titre-complet {
+      color: #d32f2f;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    
+    .cours-complet::after {
+      content: "🚫 COMPLET";
+      position: absolute;
+      top: 2px;
+      right: 4px;
+      font-size: 8px;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    
     .francais-debutant {
       background-color: #e1f5fe !important;
       border-left-color: #03a9f4;
@@ -211,18 +234,6 @@
       font-style: italic;
     }
     
-    .a-pourvoir {
-      background-color: #ffcdd2 !important;
-      border-left-color: #f44336;
-      font-style: italic;
-    }
-    
-    .a-confirmer {
-      background-color: #fff3e0 !important;
-      border-left-color: #ff9800;
-      font-style: italic;
-    }
-    
     .prof {
       font-weight: bold;
       font-size: 10px;
@@ -245,8 +256,6 @@
       border-top: 1px solid #ddd;
       padding-top: 15px;
     }
-
-
   </style>
 </head>
 <body>
@@ -304,8 +313,8 @@
           <strong>Français intermédiaire</strong><br>
           <span class="prof">Barbara</span>
         </div>
-        <div class="cours francais-avance">
-          <strong>Français avancé</strong><br>
+        <div class="cours francais-avance cours-complet">
+          <span class="titre-complet">Français avancé</span><br>
           <span class="prof">Marie-Claire R.</span>
         </div>
         <div class="cours garde">
@@ -315,8 +324,8 @@
         </div>
       </td>
       <td>
-        <div class="cours informatique">
-          <strong>Informatique</strong><br>
+        <div class="cours informatique cours-complet">
+          <span class="titre-complet">Informatique</span><br>
           <span class="prof">Nicolas</span><br>
           <small>Dès le 24 septembre</small>
         </div>
@@ -342,8 +351,9 @@
           <span class="prof">9h30-11h</span><br>
           <small style="font-size: 9px; line-height: 1.2;">
             <strong>Dates 2025 :</strong><br>
-            12 septembre • 10 octobre • 7 novembre<br>
-            21 novembre • 5 décembre • 19 décembre
+            12 septembre • 3 octobre • 10 octobre<br>
+            7 novembre • 21 novembre • 28 novembre<br>
+            5 décembre • 12 décembre • 19 décembre
           </small>
         </div>
       </td>
@@ -353,8 +363,8 @@
     <tr>
       <td><strong>11h00 - 12h30</strong></td>
       <td>
-        <div class="cours francais-debutant">
-          <strong>Français débutant</strong><br>
+        <div class="cours francais-debutant cours-complet">
+          <span class="titre-complet">Français débutant</span><br>
           <span class="prof">Elena</span><br>
           <small>11h10-12h30</small>
         </div>
@@ -375,8 +385,8 @@
     <tr>
       <td><strong>14h00 - 16h00</strong></td>
       <td>
-        <div class="cours francais-avance">
-          <strong>Français avancé</strong><br>
+        <div class="cours francais-avance cours-complet">
+          <span class="titre-complet">Français avancé</span><br>
           <span class="prof">Claire</span>
         </div>
       </td>
